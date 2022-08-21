@@ -9,6 +9,8 @@ def Getpid(process_name : str):
 
 def get_base_addr(process_name : str) -> hex:
     process_pid = Getpid(process_name)
+    if process_pid == None:
+        return None
 
     # first get pid, see the 32-bit solution
 
