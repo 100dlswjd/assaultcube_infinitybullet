@@ -56,6 +56,7 @@ print("바로 읽어옴 : ",pointer_start)
 pointer_start = int.from_bytes(pointer_start, "little")
 target_val = ReadProcessMemory(process, pointer_start + OFFSET, 4)
 while True:
+    print(pointer_start)
     WriteProcessMemory(process, pointer_start + OFFSET, bullet.to_bytes(4,"little"))
 target_val = int.from_bytes(target_val, "little")
 print(f"current bullet : {target_val}")
